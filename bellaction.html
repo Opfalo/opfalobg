@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BellAction Duo | Опфало България</title>
+    <!-- Връзка за професионални икони Font Awesome -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        body { background-color: #020617; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; scroll-behavior: smooth; }
+        a { text-decoration: none; transition: all 0.2s; }
+        
+        /* ГЛАВНА НАВИГАЦИЯ */
+        header { background-color: #0f172a; border-bottom: 1px solid #1e293b; padding: 15px 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-diamond { width: 35px; height: 35px; background: linear-gradient(135deg, #3b82f6, #06b6d4); transform: rotate(45deg); display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+        .logo-diamond i { transform: rotate(-45deg); color: white; font-size: 16px; }
+        .logo-text { font-size: 20px; font-weight: 800; color: white; letter-spacing: 1px; text-transform: uppercase; }
+        .logo-text span { color: #22d3ee; font-weight: 400; }
+        
+        .back-btn { background-color: #1e293b; color: white; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 13px; text-transform: uppercase; border: 1px solid #334155; }
+        .back-btn:hover { background-color: #334155; border-color: #06b6d4; }
+
+        /* ОСНОВЕН БЛОК ПРОДУКТ */
+        .product-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
+        .product-img-box { background-color: #ffffff; border-radius: 16px; padding: 30px; display: flex; align-items: center; justify-content: center; border: 1px solid #1e293b; min-height: 400px; }
+        .product-img-box img { max-width: 100%; max-height: 400px; object-fit: contain; }
+        
+        .product-info h1 { font-size: 36px; font-weight: 800; color: white; margin: 0 0 10px 0; }
+        .product-badge { display: inline-block; padding: 4px 12px; background-color: rgba(6, 182, 212, 0.1); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 9999px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; }
+        .product-info p { color: #94a3b8; font-size: 15px; line-height: 1.7; margin-bottom: 25px; text-align: justify; }
+
+        /* СПЕЦИФИКАЦИИ */
+        .specs-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; overflow: hidden; }
+        .specs-table tr { border-bottom: 1px solid #1e293b; }
+        .specs-table tr:last-child { border-bottom: none; }
+        .specs-table td { padding: 14px 20px; font-size: 14px; color: #cbd5e1; }
+        .specs-table td:first-child { font-weight: 700; color: #94a3b8; width: 40%; }
+        .specs-table td span { color: #22d3ee; font-weight: 600; }
+
+        .action-btn { display: inline-block; width: 100%; text-align: center; background: linear-gradient(to right, #06b6d4, #3b82f6); color: white; font-weight: 700; padding: 16px; border: none; border-radius: 6px; text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px; box-sizing: border-box; }
+        .action-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4); }
+
+        /* ДЕТАЙЛНО ОПИСАНИЕ */
+        .details-section { max-width: 1200px; margin: 60px auto; padding: 0 20px; border-top: 1px solid #1e293b; padding-top: 40px; }
+        .details-section h2 { font-size: 24px; color: white; text-transform: uppercase; margin-bottom: 25px; }
+        .details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .detail-card { background-color: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; text-align: left; }
+        .detail-card i { font-size: 28px; color: #22d3ee; margin-bottom: 15px; }
+        .detail-card h3 { color: white; font-size: 18px; margin: 0 0 10px 0; }
+        .detail-card p { color: #94a3b8; font-size: 13.5px; line-height: 1.5; margin: 0; }
+
+        footer { background-color: #020617; border-top: 1px solid #1e293b; text-align: center; padding: 25px 20px; color: #64748b; font-size: 12px; margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+    <!-- ГЛАВНА НАВИГАЦИЯ -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-diamond"><i class="fa-solid fa-bolt"></i></div>
+                <div class="logo-text">Опфало <span>България</span></div>
+            </div>
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Обратно в каталога</a>
+        </div>
+    </header>
+
+    <!-- ОСНОВЕН БЛОК ПРОДУКТ -->
+    <div class="product-container">
+        <!-- Снимка -->
+        <div class="product-img-box">
+            <img src="foto-bellaction.jpg" alt="BellAction Duo">
+        </div>
+        
+        <!-- Кратко инфо и Технически данни -->
+        <div class="product-info">
+            <div class="product-badge">Ределиниране и Мускулен Масаж</div>
+            <h1>BellAction Duo</h1>
+            <p>BellAction Duo е единствената патентована система на пазара, която извършва физиоактивен дълбок масаж, вдъхновен от движенията на ръцете на професионален терапевт. Чрез мощна комбинация от компресия и ротация, апаратът достига до най-дълбоките мускулни слоеве, елиминира напълно целулита, извежда задържаните течности и стяга меките тъкани без да ги отпуска.</p>
+            
+            <table class="specs-table">
+                <tr>
+                    <td>Механизъм на действие:</td>
+                    <td>Плъзгаща компресия и дълбока ротация</td>
+                </tr>
+                <tr>
+                    <td>Очаквани резултати:</td>
+                    <td><span>Намаляване на обема с до -2 размера</span></td>
+                </tr>
+                <tr>
+                    <td>Употреба:</td>
+                    <td><span>Пълни терапии за Лице и Тяло</span></td>
+                </tr>
+                <tr>
+                    <td>Основни ефекти:</td>
+                    <td>Антицелулитен, лимфен дренаж, тонизиране</td>
+                </tr>
+                <tr>
+                    <td>Сигурност:</td>
+                    <td>100% неинвазивна, без увреждане на капиляри</td>
+                </tr>
+            </table>
+            
+            <a href="index.html#contact" class="action-btn">Направи запитване за наем / покупка</a>
+        </div>
+    </div>
+
+    <!-- ДЕТАЙЛНО ОПИСАНИЕ С ПРЕДИМСТВА -->
+    <div class="details-section">
+        <h2>Резултати и Клинични Предимства</h2>
+        <div class="details-grid">
+            
+            <div class="detail-card">
+                <i class="fa-solid fa-dumbbell"></i>
+                <h3>Дълбока Мускулна Работа</h3>
+                <p>За разлика от вакуумните системи, които разтягат кожата, BellAction оказва натиск навътре върху мускула. Това възстановява мускулния тонус и придава стегнат атлетичен вид.</p>
+            </div>
+
+            <div class="detail-card">
+                <i class="fa-solid fa-droplet"></i>
+                <h3>Мощен Лимфен Дренаж</h3>
+                <p>Регулируемата компресия стимулира кръвообращението в дълбочина, ускорява клетъчния метаболизъм и бързо елиминира токсините и излишната вода от крайниците.</p>
+            </div>
+
+            <div class="detail-card">
+                <i class="fa-solid fa-scissors"></i>
+                <h3>Премахване на Стрии и Белези</h3>
+                <p>Специалният накрайник за лице и деликатни зони извършва микродермабразио, което ексфолира кожата, заглажда релефа и видимо заличава стрии и повърхностни бръчки.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ФУТЪР -->
+    <footer>
+        <p>© 2026 Опфало България. Всички права запазени. Официален представител на Óphalo Испания.</p>
+    </footer>
+
+</body>
+</html>
