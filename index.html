@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опфало България | Продуктов Каталог и Партньорство</title>
+    <!-- Връзка за професионални икони Font Awesome -->
+<link rel="stylesheet" href="https://bootstrapcdn.com">
+    <style>
+        body { background-color: #020617; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; scroll-behavior: smooth; }
+        a { text-decoration: none; transition: all 0.2s; }
+        
+        /* НАЙ-ГОРНА ЛЕНТА С КОНТАКТИ */
+        .top-bar { background-color: #0b1329; border-bottom: 1px solid #1e293b; color: #94a3b8; font-size: 13px; padding: 12px 0; }
+        .top-bar-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; }
+        .top-bar-left { color: #22d3ee; font-weight: 600; }
+        .top-bar-right { display: flex; gap: 20px; }
+        .top-bar a { color: #94a3b8; display: flex; align-items: center; gap: 6px; }
+        .top-bar a:hover { color: #22d3ee; }
+
+        /* ГЛАВНА НАВИГАЦИЯ */
+        header { position: sticky; top: 0; z-index: 100; background-color: #0f172a; border-bottom: 1px solid #1e293b; padding: 15px 0; }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-diamond { width: 35px; height: 35px; background: linear-gradient(135deg, #3b82f6, #06b6d4); transform: rotate(45deg); display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+        .logo-diamond i { transform: rotate(-45deg); color: white; font-size: 16px; }
+        .logo-text { font-size: 20px; font-weight: 800; color: white; letter-spacing: 1px; text-transform: uppercase; }
+        .logo-text span { color: #22d3ee; font-weight: 400; }
+        
+        nav { display: flex; align-items: center; gap: 25px; }
+        nav a { color: #cbd5e1; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        nav a:hover { color: #22d3ee; }
+
+        /* ГЛАВЕН БАНЕР */
+        .hero { max-width: 1400px; margin: 0 auto; padding: 50px 20px; text-align: center; }
+        .badge { display: inline-block; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 600; background-color: rgba(6, 182, 212, 0.1); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.2); margin-bottom: 24px; text-transform: uppercase; }
+        .hero h1 { font-size: 42px; font-weight: 800; color: white; margin: 0 0 10px 0; text-transform: uppercase; line-height: 1.2; }
+        .hero h1 span { color: #22d3ee; }
+        .hero .sub-title { font-size: 24px; font-weight: 600; color: #cbd5e1; margin: 0 0 20px 0; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* СЕКЦИЯ ЗА НАС */
+        .about-section { padding: 40px 20px; background-color: #0f172a; border-top: 1px solid #1e293b; }
+        .about-container { max-width: 1000px; margin: 0 auto; text-align: center; }
+        .about-container h2 { font-size: 26px; font-weight: 700; color: white; text-transform: uppercase; margin-bottom: 15px; }
+        .about-container p { font-size: 15px; color: #94a3b8; line-height: 1.7; margin-bottom: 15px; text-align: justify; }
+
+        /* КАТАЛОГ ПРОДУКТИ */
+        .catalog-section { padding: 50px 20px; background-color: #020617; border-top: 1px solid #1e293b; }
+        .catalog-title { text-align: center; font-size: 30px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; color: white; }
+        .catalog-subtitle { text-align: center; color: #94a3b8; font-size: 14px; margin-bottom: 40px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1400px; margin: 0 auto; }
+        
+        @media (max-width: 1200px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+
+        .card { background-color: #0f172a; border: 1px solid #1e293b; border-radius: 12px; overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; }
+        .card:hover { border-color: #06b6d4; transform: translateY(-5px); }
+        .card-img-box { height: 180px; background-color: #fff; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        .card-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        
+        .card-content { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-type { font-size: 10px; color: #06b6d4; text-transform: uppercase; font-weight: 700; margin-bottom: 4px; letter-spacing: 0.5px; }
+        .card h3 { font-size: 17px; color: white; margin: 0 0 8px 0; font-weight: 700; }
+        .card p { font-size: 13px; color: #94a3b8; line-height: 1.4; margin: 0 0 12px 0; text-align: left; }
+        
+        .card-specs { background-color: #020617; border-radius: 6px; padding: 10px; border: 1px solid #1e293b; text-align: left; margin-top: auto; }
+        .card-specs div { font-size: 12px; color: #cbd5e1; margin-bottom: 4px; display: flex; justify-content: space-between; }
+        .card-specs div:last-child { margin-bottom: 0; }
+        .card-specs div span { color: #22d3ee; font-weight: 600; }
+
+        /* ФУТЪР */
+        footer { background-color: #020617; border-top: 1px solid #1e293b; text-align: center; padding: 25px 20px; color: #64748b; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <!-- НАЙ-ГОРНА ЛЕНТА -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">Официален Дистрибутор за България</div>
+            <div class="top-bar-right">
+                <a href="tel:0898939202"><i class="fa-solid fa-phone"></i> 0898 939 202</a>
+                <a href="mailto:office@opfalo.co"><i class="fa-solid fa-envelope"></i> office@opfalo.co</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ГЛАВНА НАВИГАЦИЯ -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-diamond"><i class="fa-solid fa-bolt"></i></div>
+                <div class="logo-text">Опфало <span>България</span></div>
+            </div>
+             <nav style="display: flex; gap: 20px;">
+                <a href="#about">За нас</a>
+                <a href="#catalog">Продукти</a>
+                <a href="#rent">Партньорство</a>
+                <a href="#contact">Контакти</a>
+            </nav>
+
+       </div>
+    </header>
+
+         <!-- ГЛАВЕН БАНЕР С ЧИСТО ИЗОБРАЖЕНИЕ (БЕЗ ДУБЛИРАНЕ НА ТЕКСТА) -->
+    <div style="background-color: #020617; text-align: center; padding: 40px 20px 20px 20px;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: inline-block; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 600; background-color: rgba(6, 182, 212, 0.1); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.2); margin-bottom: 15px; text-transform: uppercase;">Испанско качество и иновация в България</div>
+            <h1 style="font-size: 38px; font-weight: 800; color: white; margin: 0 0 5px 0; text-transform: uppercase; line-height: 1.2;">Високотехнологична <span style="color: #22d3ee;">Медицинско-Естетична</span> Апаратура</h1>
+            <div style="font-size: 22px; font-weight: 600; color: #cbd5e1; margin: 0 0 35px 0; text-transform: uppercase; letter-spacing: 1px;">Опфало България</div>
+            
+            <!-- Банерът е увеличен на височина (400px), за да покаже цялата снимка идеално -->
+            <div style="max-width: 1200px; margin: 0 auto; background-color: #7da5b7; background-image: url('banner-laser.jpg'); background-size: cover; background-position: center; border-radius: 8px; min-height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            </div>
+        </div>
+    </div>
+
+    <!-- СЕКЦИЯ ЗА НАС -->
+    <div class="about-section" id="about">
+        <div class="about-container">
+            <h2>Кои сме ние?</h2>
+            <p><strong>Опфало България</strong> е официален представител и дистрибутор на водещия испански производител на високотехнологична медицинска и естетична апаратура Óphalo. Ние пренасяме дългогодишния европейски опит, инженерни иновации и безкомпромисно качество директно в уелнес и естетичните центрове в България.</p>
+        </div>
+    </div>
+
+    <!-- СЕКЦИЯ КАТАЛОГ С ПРОДУКТИ -->
+    <div class="catalog-section" id="catalog">
+        <h2 class="catalog-title">Продуктов Каталог</h2>
+        <p class="catalog-subtitle">Професионална апаратура от ново поколение директно от фабриката ни в Испания</p>
+        
+        <div class="grid">
+            <!-- 1. Sapphire LS-1200 -->
+            <div class="card">
+                <div class="card-img-box"><img src="foto-ls1200.jpg" alt="Sapphire LS-1200"></div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-type">Диоден Лазер</div>
+                        <h3>Sapphire LS-1200</h3>
+                        <p>Високомощен диоден лазер с къси импулси. Патентованата технология Depil-Ice сваля температурата до -10°C за безболезнени процедури.</p>
+                    </div>
+                    <div class="card-specs">
+                        <div>Мощност: <span>1200W / 200A</span></div>
+                        <div>Охлаждане: <span>До -10°C</span></div>
+                        <div>Честота: <span>До 15 Hz</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Nexus 2000 -->
+            <div class="card">
+                <div class="card-img-box"><img src="foto-nexus.jpg" alt="Nexus 2000 Smart"></div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-type">Иновативна Епилация</div>
+                        <h3>Nexus 2000 Smart</h3>
+                        <p>Интелигентна система за диодна епилация. Олекотен накрайник и интуитивен софтуер, който сам настройва оптималните параметри.</p>
+                    </div>
+                    <div class="card-specs">
+                        <div>Екран: <span>Smart Touch</span></div>
+                        <div>Ергономия: <span>Лек накрайник</span></div>
+                        <div>Режим: <span>Пулсов</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Phoenix+ -->
+            <div class="card">
+                <div class="card-img-box"><img src="foto-phoenix.jpg" alt="Phoenix+"></div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-type">Радиочестота</div>
+                        <h3>Phoenix+</h3>
+                        <p>Мултиполярна радиочестота за неоперативен лифтинг. Стимулира производството на колаген и регенерира тъканите за стягане на кожата.</p>
+                    </div>
+                    <div class="card-specs">
+                        <div>Енергия: <span>Радиочестотна (RF)</span></div>
+                        <div>Цел: <span>Стягане и Бръчки</span></div>
+                        <div>Зони: <span>Лице и Тяло</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. BellAction Duo -->
+            <div class="card">
+                <div class="card-img-box"><img src="foto-bellaction.jpg" alt="BellAction Duo"></div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-type">Ределиниране</div>
+                        <h3>BellAction Duo</h3>
+                        <p>Физиоактивен дълбок масаж за мускулните слоеве. Мощни антицелулитни резултати, стягане без отпускане и лимфен дренаж.</p>
+                    </div>
+                    <div class="card-specs">
+                        <div>Действие: <span>Компресия</span></div>
+                        <div>Резултат: <span>-2 размера</span></div>
+                        <div>Употреба: <span>Лице и Тяло</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Dorsal+ -->
+            <div class="card">
+                <div class="card-img-box"><img src="foto-dorsal.jpg" alt="Dorsal+"></div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-type">Пресотерапия</div>
+                        <h3>Dorsal+</h3>
+                        <p>Апарат за интелигентна пресотерапия. Стимулира кръвообращението и елиминира задържаните течности в крайниците.</p>
+                    </div>
+                    <div class="card-specs">
+                        <div>Функция: <span>Пневматичен дренаж</span></div>
+                        <div>Програми: <span>Детокс / Спорт</span></div>
+                        <div>Покритие: <span>Цялостно</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Ephyra -->
+            <div class="card">
+                <div class="card-img-box"><img src="foto-ephyra.jpg" alt="Ephyra"></div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-type">Грижа за лице</div>
+                        <h3>Ephyra</h3>
+                        <p>Мултифункционална платформа за почистване. Комбинира водно дермабразио и галванични микротокове за хидратация.</p>
+                    </div>
+                    <div class="card-specs">
+                        <div>Компоненти: <span>Хидроабразио</span></div>
+                        <div>Терапия: <span>Активен Хидрогениран</span></div>
+                        <div>Тип кожа: <span>Всички видове</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- СЕКЦИЯ: НАШИТЕ ПРЕДИМСТВА -->
+    <div style="background-color: #020617; border-top: 1px solid #1e293b; padding: 60px 20px;">
+        <div style="max-width: 1400px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 30px; font-weight: 700; text-transform: uppercase; color: white; margin-bottom: 10px;">Защо да изберете Опфало България?</h2>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 40px;">Ние осигуряваме пълно затваряне на цикъла — от доставката на сертифициран апарат до неговата постоянна поддръжка.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px;">
+                
+                <!-- Предимство 1 -->
+                <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; text-align: center;">
+                    <i class="fa-solid fa-screwdriver-wrench" style="font-size: 36px; color: #22d3ee; margin-bottom: 15px;"></i>
+                    <h3 style="color: white; font-size: 18px; margin: 0 0 10px 0; text-transform: uppercase;">Сервиз до 72 часа</h3>
+                    <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.5; margin: 0;">Разполагаме със собствен сервизен център в България. Гарантираме реакция на място и отстраняване на технически проблем в рамките на 72 часа за цялата страна.</p>
+                </div>
+
+                <!-- Предимство 2 -->
+                <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; text-align: center;">
+                    <i class="fa-solid fa-award" style="font-size: 36px; color: #22d3ee; margin-bottom: 15px;"></i>
+                    <h3 style="color: white; font-size: 18px; margin: 0 0 10px 0; text-transform: uppercase;">Испански Сертификат</h3>
+                    <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.5; margin: 0;">Всички машини идват директно от фабриката ни в Испания, придружени с европейски сертификати за медицинско и козметично качество.</p>
+                </div>
+
+                <!-- Предимство 3 -->
+                <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; text-align: center;">
+                    <i class="fa-solid fa-user-graduate" style="font-size: 36px; color: #22d3ee; margin-bottom: 15px;"></i>
+                    <h3 style="color: white; font-size: 18px; margin: 0 0 10px 0; text-transform: uppercase;">Пълно Обучение</h3>
+                    <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.5; margin: 0;">При наемане или закупуване осигуряваме детайлно практическо обучение за вашите оператори с издаване на официален индивидуален сертификат за работа.</p>
+                </div>
+
+                <!-- Предимство 4 -->
+                <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; text-align: center;">
+                    <i class="fa-solid fa-chart-line" style="font-size: 36px; color: #22d3ee; margin-bottom: 15px;"></i>
+                    <h3 style="color: white; font-size: 18px; margin: 0 0 10px 0; text-transform: uppercase;">Маркетинг Реклама</h3>
+                    <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.5; margin: 0;">Предоставяме готови рекламни материали, професионални снимки, брошури и видеоклипове, за да привлечете клиенти в салона си още от първия ден.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- СЕКЦИЯ НАЕМ, УСЛОВИЯ И ЦЕНИ -->
+    <div style="background-color: #0f172a; border-top: 1px solid #1e293b; border-bottom: 1px solid #1e293b; padding: 60px 20px;" id="rent">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 30px; font-weight: 700; text-transform: uppercase; color: white; margin-bottom: 10px;">Възможности за Бизнес Партньорство</h2>
+                <p style="color: #94a3b8; font-size: 15px; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    <strong>Опфало България</strong> предлага професионално оборудване за лазерна епилация от Испания. Ние предоставяме гъвкави и сигурни варианти за работа, съобразени с нуждите на вашето студио.
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 50px;">
+                <div style="background-color: #020617; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; text-align: left;">
+                    <h3 style="color: white; font-size: 18px; text-transform: uppercase; margin: 0 0 15px 0; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-handshake" style="color: #06b6d4;"></i> Отдаване под наем
+                    </h3>
+                    <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.5; margin-bottom: 15px;">Предлагаме два изключително гъвкави варианта за процентно разпределение на приходите:</p>
+                    <ul style="padding-left: 20px; color: #cbd5e1; font-size: 13.5px; margin: 0; line-height: 1.6;">
+                        <li style="margin-bottom: 10px;"><strong>Наш оператор:</strong> за вашето студио остават <span style="color: #22d3ee; font-weight: 600;">40% от общия оборот</span>.</li>
+                        <li><strong>Ваш оператор:</strong> осигуряваме пълно обучение – за студиото остават <span style="color: #22d3ee; font-weight: 600;">50% от оборота</span>.</li>
+                    </ul>
+                </div>
+
+                <div style="background-color: #020617; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; text-align: left;">
+                    <h3 style="color: white; font-size: 18px; text-transform: uppercase; margin: 0 0 15px 0; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-credit-card" style="color: #06b6d4;"></i> Продажба и лизинг
+                    </h3>
+                    <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.6; margin: 0;">
+                        Лазерните апарати могат да бъдат закупени директно, като се предлагат и гъвкави условия за <span style="color: #22d3ee; font-weight: 600;">разсрочено плащане на изплащане</span> или <span style="color: #22d3ee; font-weight: 600;">лизинг</span>.
+                    </p>
+                </div>
+
+                <div style="background-color: #020617; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; text-align: left;">
+                    <h3 style="color: white; font-size: 18px; text-transform: uppercase; margin: 0 0 15px 0; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-gift" style="color: #06b6d4;"></i> Безплатна презентация
+                    </h3>
+                    <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.6; margin: 0;">
+                        Организираме безплатна демонстрация във вашето студио, включваща <span style="color: #22d3ee; font-weight: 600;">до 10–15 безплатни процедури</span> на зони подмишници за записани от вас клиенти.
+                    </p>
+                </div>
+            </div>
+
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
+                <thead>
+                    <tr style="background-color: #0b1329; color: white; text-transform: uppercase; font-size: 11px; border-bottom: 1px solid #1e293b;">
+                        <th style="padding: 16px 20px;">Апарат</th>
+                        <th style="padding: 16px 20px;">Тип технология</th>
+                        <th style="padding: 16px 20px;">Дневен наем</th>
+                        <th style="padding: 16px 20px;">Условия / Оборот</th>
+                        <th style="padding: 16px 20px;">Поддръжка & Сервиз</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #1e293b;">
+                        <td style="padding: 16px 20px; color: #cbd5e1;"><strong>Sapphire LS-1200</strong></td>
+                        <td style="padding: 16px 20px; color: #cbd5e1;">Диоден лазер (Испания)</td>
+                        <td style="padding: 16px 20px; color: #22d3ee; font-weight: 600;">По запитване</td>
+                        <td style="padding: 16px 20px; color: #cbd5e1;">40% или 50% за студиото</td>
+                        <td style="padding: 16px 20px; color: #cbd5e1;">Включен гаранционен сервиз</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #1e293b;">
+                        <td style="padding: 16px 20px; color: #cbd5e1;"><strong>Nexus 2000 Smart</strong></td>
+                        <td style="padding: 16px 20px; color: #cbd5e1;">Интелигентна диодна епилация</td>
+                        <td style="padding: 16px 20px; color: #22d3ee; font-weight: 600;">По запитване</td>
+                        <td style="padding: 16px 20px; color: #cbd5e1;">Гъвкаво разпределение</td>
+                        <td style="padding: 16px 20px; color: #cbd5e1;">Осигурено обучение</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #1e293b;">
+                        <td style="padding: 16px 20px; color: #cbd5e1;"><strong>Phoenix+ / BellAction</strong></td>
+                        <td style="padding: 16px 20px; color: #cbd5e1;">Радиочестота / Мускулен масаж</td>
+                        <td style="padding: 16px 20px; color: #22d3ee; font-weight: 600;">По запитване</td>
+                        <td style="padding: 16px 20px; color: #cbd5e1;">Опция за лизинг / покупка</td>
+                        <td style="padding: 16px 20px; color: #cbd5e1;">Пълна техническа поддръжка</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 16px 20px; color: #cbd5e1;"><strong>Ephyra / Dorsal+</strong></td>
+                        <td style="padding: 16px 20px; color: #cbd5e1;">Хидроабразио / Пресотерапия</td>
+                        <td style="padding: 16px 20px; color: #22d3ee; font-weight: 600;">По запитване</td>
+                        <td style="padding: 16px 20px; color: #cbd5e1;">Пакетни бизнес условия</td>
+                        <td style="padding: 16px 20px; color: #cbd5e1;">Включени консултации</td>
+    <!-- СЕКЦИЯ КОНТАКТИ (ОНЛАЙН ЗАЯВКА И АДРЕС) -->
+    <div style="background-color: #ffffff; color: #334155; padding: 60px 20px;" id="contact">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px;">
+            
+            <!-- Лява колона: Онлайн Заявка -->
+            <div style="text-align: left;">
+                <h3 style="font-size: 22px; color: #0f172a; margin: 0 0 25px 0; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">Онлайн Заявка</h3>
+                <form onsubmit="event.preventDefault(); alert('Благодарим ви! Заявката е изпратена успешно.');">
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 6px;">Три имена *</label>
+                        <input type="text" required style="width: 100%; padding: 14px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; color: #0f172a; box-sizing: border-box; font-size: 14px;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 6px;">Телефон за контакти *</label>
+                        <input type="text" required style="width: 100%; padding: 14px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; color: #0f172a; box-sizing: border-box; font-size: 14px;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 6px;">E-mail *</label>
+                        <input type="email" required style="width: 100%; padding: 14px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; color: #0f172a; box-sizing: border-box; font-size: 14px;">
+                    </div>
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 6px;">Съобщение / Интерес към апарат</label>
+                        <textarea rows="4" style="width: 100%; padding: 14px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; color: #0f172a; box-sizing: border-box; font-size: 14px; resize: vertical;"></textarea>
+                    </div>
+                    <button type="submit" style="background: linear-gradient(to right, #06b6d4, #3b82f6); color: white; font-weight: 700; padding: 14px 35px; border: none; border-radius: 4px; text-transform: uppercase; font-size: 13px; letter-spacing: 0.5px; cursor: pointer;">Изпрати</button>
+                </form>
+            </div>
+
+            <!-- Дясна колона: Адрес и Контакти -->
+            <div style="text-align: left;">
+                <h3 style="font-size: 22px; color: #0f172a; margin: 0 0 25px 0; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">Адрес:</h3>
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 40px; color: #475569; font-size: 15px;">
+                    <i class="fa-solid fa-map-marker-alt" style="color: #3b82f6; font-size: 18px;"></i>
+                    <span>София, кв. Бъкстон, ул. Майор Горталов 5</span>
+                </div>
+
+                <h3 style="font-size: 22px; color: #0f172a; margin: 0 0 25px 0; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">За Контакти:</h3>
+                
+                <div style="margin-bottom: 12px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 12px 16px; display: flex; align-items: center; gap: 15px;">
+                    <i class="fa-solid fa-envelope" style="color: #0f172a; font-size: 16px;"></i>
+                    <span style="color: #475569; font-size: 14px;">Email : <a href="mailto:office@opfalo.com" style="color: #3b82f6; font-weight: 600;">office@opfalo.com</a></span>
+                </div>
+
+                <div style="margin-bottom: 12px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 12px 16px; display: flex; align-items: center; gap: 15px;">
+                    <i class="fa-solid fa-phone" style="color: #0f172a; font-size: 16px;"></i>
+                    <span style="color: #475569; font-size: 14px;">Tel : <a href="tel:+359898939202" style="color: #3b82f6; font-weight: 600;">+359 898 939 202</a></span>
+                </div>
+
+                <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 12px 16px; display: flex; align-items: center; gap: 15px;">
+                    <i class="fa-solid fa-globe" style="color: #0f172a; font-size: 16px;"></i>
+                    <span style="color: #475569; font-size: 14px;">Web : <a href="#" style="color: #3b82f6; font-weight: 600;">www.opfalo.com</a></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ПРОФЕСИОНАЛЕН ТЪМЕН ФУТЪР СЪС СОЦИАЛНИ МРЕЖИ -->
+    <div style="background-color: #090d16; border-top: 2px solid #1e293b; padding: 40px 20px; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 25px;">
+            
+            <!-- Централно Лого на марката -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6, #06b6d4); transform: rotate(45deg); display: flex; align-items: center; justify-content: center; border-radius: 4px; margin-bottom: 5px;">
+                    <i class="fa-solid fa-bolt" style="transform: rotate(-45deg); color: white; font-size: 18px;"></i>
+                </div>
+                <div style="font-size: 18px; font-weight: 800; color: white; letter-spacing: 2px; text-transform: uppercase;">Ophalo</div>
+                <div style="font-size: 10px; color: #94a3b8; letter-spacing: 1px; text-transform: uppercase;">Fabricante Español</div>
+            </div>
+
+            <!-- Разделителна хоризонтална линия -->
+            <div style="width: 100%; height: 1px; background-color: #1e293b; margin: 10px 0;"></div>
+
+            <!-- Долен ред: Информация и Социални икони -->
+            <div style="width: 100%; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; text-align: left;">
+                
+                <div style="font-size: 13px; color: #94a3b8; line-height: 1.6;">
+                    <strong style="color: white;">Ophalo | Bulgaria</strong><br>
+                    office@opfalo.com<br>
+                    +359 898 939 202<br>
+                    Bulgaria, Sofia, Bakston, 5, Mayor Gortalov Str
+                </div>
+
+                <!-- Нови изчистени бели икони за социални мрежи (с TikTok) -->
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <a href="#" style="color: #ffffff; font-size: 20px;"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" style="color: #ffffff; font-size: 20px;"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" style="color: #ffffff; font-size: 20px;"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" style="color: #ffffff; font-size: 20px;"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" style="color: #ffffff; font-size: 20px;"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+
+                </div>
+                <!-- Дясно: Лога на медицинските сертификати за качество -->
+                <div style="display: flex; gap: 15px; align-items: center; margin-left: auto;">
+                    <img src="sertifikati.png" alt="Сертификати за качество Óphalo" style="max-height: 45px; object-fit: contain;">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- БУТОНИ ЗА БЪРЗА ВРЪЗКА ПО VIBER И WHATSAPP -->
+    <div style="position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 9999;">
+        <!-- Viber Бутон -->
+        <a href="viber://chat?number=%2B359898939202" style="background-color: #732dd3; color: white; width: 50px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: sans-serif; font-size: 11px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-align: center;">Viber</a>
+        
+        <!-- WhatsApp Бутон -->
+        <a href="https://wa.me" style="background-color: #25d366; color: white; width: 50px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: sans-serif; font-size: 11px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-align: center;">WA</a>
+    </div>
