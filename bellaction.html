@@ -3,140 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BellAction Duo | Опфало България</title>
-    <!-- Връзка за професионални икони Font Awesome -->
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <title>Опфало България | Отдаване под Наем, Продажба и Сервиз на Диодни Лазери</title>
+    <meta name="description" content="Опфало България предлагает отдаване под наем на професионални диодни лазери за епилация, качествен сервиз до 72 часа и поддръжка на медицинско-естетична апаратура.">
+    
+    <!-- Официална връзка за Font Awesome икони -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- JSON-LD Structured Data за Google (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Опфало България",
+      "image": "https://opfalo.com/logo.jpg",
+      "@id": "https://opfalo.com",
+      "url": "https://opfalo.com",
+      "telephone": "+359898939202",
+      "email": "office@opfalo.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Майор Горталов 5, кв. Бъкстон",
+        "addressLocality": "София",
+        "postalCode": "1618",
+        "addressCountry": "BG"
+      }
+    }
+    </script>
+
     <style>
         body { background-color: #020617; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; scroll-behavior: smooth; }
         a { text-decoration: none; transition: all 0.2s; }
         
+        /* НАЙ-ГОРНА ЛЕНТА С КОНТАКТИ И СОЦИАЛНИ МРЕЖИ */
+        .top-bar { background-color: #0b1329; border-bottom: 1px solid #1e293b; color: #94a3b8; font-size: 13px; padding: 10px 0; }
+        .top-bar-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+        .top-bar-left { color: #22d3ee; font-weight: 600; font-size: 12px; }
+        .top-bar-right { display: flex; gap: 18px; align-items: center; }
+        .top-bar a { color: #94a3b8; display: flex; align-items: center; gap: 6px; font-size: 13px; }
+        .top-bar a:hover { color: #22d3ee; }
+
         /* ГЛАВНА НАВИГАЦИЯ */
-        header { background-color: #0f172a; border-bottom: 1px solid #1e293b; padding: 15px 0; }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        header { position: sticky; top: 0; z-index: 100; background-color: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 0; }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
         .logo-area { display: flex; align-items: center; gap: 12px; }
-        .logo-diamond { width: 35px; height: 35px; background: linear-gradient(135deg, #3b82f6, #06b6d4); transform: rotate(45deg); display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+        .logo-diamond { width: 36px; height: 36px; background: linear-gradient(135deg, #3b82f6, #06b6d4); transform: rotate(45deg); display: flex; align-items: center; justify-content: center; border-radius: 4px; }
         .logo-diamond i { transform: rotate(-45deg); color: white; font-size: 16px; }
         .logo-text { font-size: 20px; font-weight: 800; color: white; letter-spacing: 1px; text-transform: uppercase; }
         .logo-text span { color: #22d3ee; font-weight: 400; }
         
-        .back-btn { background-color: #1e293b; color: white; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 13px; text-transform: uppercase; border: 1px solid #334155; }
-        .back-btn:hover { background-color: #334155; border-color: #06b6d4; }
+        nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+        nav a { color: #cbd5e1; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 6px; background: rgba(255,255,255,0.03); }
+        nav a i { color: #22d3ee; font-size: 14px; }
+        nav a:hover { color: #ffffff; background: rgba(6, 182, 212, 0.15); }
 
-        /* ОСНОВЕН БЛОК ПРОДУКТ */
-        .product-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
-        .product-img-box { background-color: #ffffff; border-radius: 16px; padding: 30px; display: flex; align-items: center; justify-content: center; border: 1px solid #1e293b; min-height: 400px; }
-        .product-img-box img { max-width: 100%; max-height: 400px; object-fit: contain; }
+        /* МОБИЛЕН БУТОН ЗА ОБАЖДАНЕ (ДОЛУ ВЪВ ЪГЪЛА) */
+        .call-float-btn { display: none; position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 14px 20px; border-radius: 50px; font-weight: 700; font-size: 14px; box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4); z-index: 999; align-items: center; gap: 10px; }
+        .call-float-btn i { font-size: 18px; }
+
+        /* АДАПТИВНОСТ ЗА МОБИЛНИ УСТРОЙСТВА */
+        @media (max-width: 768px) {
+            .top-bar-left { display: none; } /* Скрива излишния текст на телефони */
+            .top-bar-container { justify-content: center; }
+            .nav-container { justify-content: center; text-align: center; }
+            nav { justify-content: center; gap: 8px; width: 100%; }
+            nav a { font-size: 11px; padding: 6px 8px; }
+            .call-float-btn { display: flex; } /* Показва плаващия бутон за обаждане на телефони */
+        }
+
+        /* КАТАЛОГ И КАРТИ */
+        .catalog-section { padding: 50px 20px; background-color: #020617; border-top: 1px solid #1e293b; }
+        .catalog-title { text-align: center; font-size: 30px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; color: white; }
+        .catalog-subtitle { text-align: center; color: #94a3b8; font-size: 14px; margin-bottom: 40px; }
         
-        .product-info h1 { font-size: 36px; font-weight: 800; color: white; margin: 0 0 10px 0; }
-        .product-badge { display: inline-block; padding: 4px 12px; background-color: rgba(6, 182, 212, 0.1); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 9999px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; }
-        .product-info p { color: #94a3b8; font-size: 15px; line-height: 1.7; margin-bottom: 25px; text-align: justify; }
-
-        /* СПЕЦИФИКАЦИИ */
-        .specs-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; overflow: hidden; }
-        .specs-table tr { border-bottom: 1px solid #1e293b; }
-        .specs-table tr:last-child { border-bottom: none; }
-        .specs-table td { padding: 14px 20px; font-size: 14px; color: #cbd5e1; }
-        .specs-table td:first-child { font-weight: 700; color: #94a3b8; width: 40%; }
-        .specs-table td span { color: #22d3ee; font-weight: 600; }
-
-        .action-btn { display: inline-block; width: 100%; text-align: center; background: linear-gradient(to right, #06b6d4, #3b82f6); color: white; font-weight: 700; padding: 16px; border: none; border-radius: 6px; text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px; box-sizing: border-box; }
-        .action-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4); }
-
-        /* ДЕТАЙЛНО ОПИСАНИЕ */
-        .details-section { max-width: 1200px; margin: 60px auto; padding: 0 20px; border-top: 1px solid #1e293b; padding-top: 40px; }
-        .details-section h2 { font-size: 24px; color: white; text-transform: uppercase; margin-bottom: 25px; }
-        .details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .detail-card { background-color: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; text-align: left; }
-        .detail-card i { font-size: 28px; color: #22d3ee; margin-bottom: 15px; }
-        .detail-card h3 { color: white; font-size: 18px; margin: 0 0 10px 0; }
-        .detail-card p { color: #94a3b8; font-size: 13.5px; line-height: 1.5; margin: 0; }
-
-        footer { background-color: #020617; border-top: 1px solid #1e293b; text-align: center; padding: 25px 20px; color: #64748b; font-size: 12px; margin-top: 60px; }
-    </style>
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1400px; margin: 0 auto; }
+        @media (max-width: 1200px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+    .top-bar { display: none; }
+}
+        .card { background-color: #0f172a; border: 1px solid #1e293b; border-radius: 12px; overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; }
+        .card:hover { border-color: #06b6d4; transform: translateY(-5px); }
+        .card-img-box { height: 180px; background-color: #fff; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        .card-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        
+        .card-content { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-type { font-size: 10px; color: #06b6d4; text-transform: uppercase; font-weight: 700; margin-bottom: 4px; letter-spacing: 0.5px; }
+        .card h3 { font-size: 17px; color: white; margin: 0 0 8px 0; font-weight: 700; }
+        .card p { font-size: 13px; color: #94a3b8; line-height: 1.4; margin: 0 0 12px 0; text-align: left; }
+        
+        .card-specs { background-color: #020617; border-radius: 6px; padding: 10px; border: 1px solid #1e293b; text-align: left; margin-top: auto; }
+        .card-specs div { font-size: 12px; color: #cbd5e1; margin-bottom: 4px; display: flex; justify-content: space-between; }
+        .card-specs div:last-child { margin-bottom: 0; }
+        .card-specs div span { color: #22d3ee; font-weight: 600; }
+@media (max-width: 768px) {
+            .top-bar { display: none; }
+            body { padding: 10px; }
+        }
+</style>
 </head>
 <body>
 
-    <!-- ГЛАВНА НАВИГАЦИЯ -->
+    <!-- ПЛАВАЩ БУТОН ЗА ОБАЖДАНЕ ЗА ТЕЛЕФОНИ -->
+    <a href="tel:0898939202" class="call-float-btn">
+        <i class="fa-solid fa-phone"></i> Обади се сега
+    </a>
+
+    <!-- НАЙ-ГОРНА ЛЕНТА С ТЕЛЕФОН И СОЦИАЛНИ МРЕЖИ -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">Официален Дистрибутор & Сервиз за България</div>
+            <div class="top-bar-right">
+                <a href="tel:0898939202"><i class="fa-solid fa-phone" style="color: #22d3ee;"></i> 0898 939 202</a>
+                <a href="mailto:office@opfalo.com"><i class="fa-solid fa-envelope" style="color: #22d3ee;"></i> office@opfalo.com</a>
+                <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook" style="color: #3b82f6; font-size: 16px;"></i></a>
+                <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram" style="color: #e1306c; font-size: 16px;"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ГЛАВНА НАВИГАЦИЯ С ИКОНИ -->
     <header>
         <div class="nav-container">
             <div class="logo-area">
                 <div class="logo-diamond"><i class="fa-solid fa-bolt"></i></div>
                 <div class="logo-text">Опфало <span>България</span></div>
             </div>
-            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Обратно в каталога</a>
+            <nav>
+                <a href="#"><i class="fa-solid fa-house"></i> Начало</a>
+                <a href="#about"><i class="fa-solid fa-circle-info"></i> За нас</a>
+                <a href="#catalog"><i class="fa-solid fa-cubes"></i> Апаратура</a>
+                <a href="#rent"><i class="fa-solid fa-handshake"></i> Партньорство</a>
+                <a href="#contact"><i class="fa-solid fa-envelope"></i> Контакти</a>
+            </nav>
         </div>
     </header>
 
-    <!-- ОСНОВЕН БЛОК ПРОДУКТ -->
-    <div class="product-container">
-        <!-- Снимка -->
-        <div class="product-img-box">
-            <img src="foto-bellaction.jpg" alt="BellAction Duo">
-        </div>
-        
-        <!-- Кратко инфо и Технически данни -->
-        <div class="product-info">
-            <div class="product-badge">Ределиниране и Мускулен Масаж</div>
-            <h1>BellAction Duo</h1>
-            <p>BellAction Duo е единствената патентована система на пазара, която извършва физиоактивен дълбок масаж, вдъхновен от движенията на ръцете на професионален терапевт. Чрез мощна комбинация от компресия и ротация, апаратът достига до най-дълбоките мускулни слоеве, елиминира напълно целулита, извежда задържаните течности и стяга меките тъкани без да ги отпуска.</p>
+    <!-- ГЛАВЕН БАНЕР -->
+    <div style="background-color: #020617; text-align: center; padding: 40px 20px 20px 20px;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: inline-block; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 600; background-color: rgba(6, 182, 212, 0.1); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.2); margin-bottom: 15px; text-transform: uppercase;">Испанско качество и иновация в България</div>
+            <h1 style="font-size: 36px; font-weight: 800; color: white; margin: 0 0 5px 0; text-transform: uppercase; line-height: 1.2;">Отдаване под Наем и Сервиз на <span style="color: #22d3ee;">Диодни Лазери</span></h1>
+            <div style="font-size: 20px; font-weight: 600; color: #cbd5e1; margin: 0 0 30px 0; text-transform: uppercase; letter-spacing: 1px;">Опфало България</div>
             
-            <table class="specs-table">
-                <tr>
-                    <td>Механизъм на действие:</td>
-                    <td>Плъзгаща компресия и дълбока ротация</td>
-                </tr>
-                <tr>
-                    <td>Очаквани резултати:</td>
-                    <td><span>Намаляване на обема с до -2 размера</span></td>
-                </tr>
-                <tr>
-                    <td>Употреба:</td>
-                    <td><span>Пълни терапии за Лице и Тяло</span></td>
-                </tr>
-                <tr>
-                    <td>Основни ефекти:</td>
-                    <td>Антицелулитен, лимфен дренаж, тонизиране</td>
-                </tr>
-                <tr>
-                    <td>Сигурност:</td>
-                    <td>100% неинвазивна, без увреждане на капиляри</td>
-                </tr>
-            </table>
-            
-            <a href="index.html#contact" class="action-btn">Направи запитване за наем / покупка</a>
+            <div style="max-width: 1200px; margin: 0 auto; background-color: #7da5b7; background-image: url('banner-laser.jpg'); background-size: cover; background-position: center; border-radius: 8px; min-height: 380px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);"></div>
         </div>
     </div>
 
-    <!-- ДЕТАЙЛНО ОПИСАНИЕ С ПРЕДИМСТВА -->
-    <div class="details-section">
-        <h2>Резултати и Клинични Предимства</h2>
-        <div class="details-grid">
+    <!-- СЕКЦИЯ ЗА НАС -->
+    <div style="padding: 40px 20px; background-color: #0f172a; border-top: 1px solid #1e293b;" id="about">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 26px; font-weight: 700; color: white; text-transform: uppercase; margin-bottom: 15px;">Кои сме ние?</h2>
+            <p style="font-size: 15px; color: #94a3b8; line-height: 1.7; margin-bottom: 15px; text-align: justify;"><strong>Опфало България</strong> е официален представител и дистрибутор на водещия испански производител на високотехнологична медицинска и естетична апаратура Óphalo. Ние осигуряваме професионално оборудване, отдаване под наем на диодни лазери за епилация, бърз сервиз и безупречна поддръжка за естетичните центрове в България.</p>
+        </div>
+    </div>
+
+    <!-- СЕКЦИЯ КАТАЛОГ С ПРОДУКТИ -->
+    <div class="catalog-section" id="catalog">
+        <h2 class="catalog-title">Апаратура и Продукти</h2>
+        <p class="catalog-subtitle">Професионална апаратура от ново поколение директно от фабриката ни в Испания</p>
+        
+        <div class="grid">
+            <!-- 1. Sapphire LS-1200 -->
+            <div class="card">
+                <div class="card-img-box"><img src="foto-ls1200.jpg" alt="Sapphire LS-1200"></div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-type">Диоден Лазер</div>
+                        <h3><a href="sapphire-ls1200.html" style="color: white;">Sapphire LS-1200</a></h3>
+                        <p>Високомощен диоден лазер с къси импулси. Патентованата технология Depil-Ice сваля температурата до -10°C за безболезнени процедури.</p>
+                    </div>
+                    <div class="card-specs">
+                        <div>Мощност: <span>1200W / 200A</span></div>
+                        <div>Охлаждане: <span>До -10°C</span></div>
+                        <div>Честота: <span>До 15 Hz</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Nexus 2000 -->
+            <div class="card">
+                <div class="card-img-box"><img src="foto-nexus.jpg" alt="Nexus 2000 Smart"></div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-type">Иновативна Епилация</div>
+                        <h3><a href="nexus-2000.html" style="color: white;">Nexus 2000 Smart</a></h3>
+                        <p>Интелигентна система за диодна епилация. Олекотен накрайник и интуитивен софтуер, който сам настройва оптималните параметри.</p>
+                    </div>
+                    <div class="card-specs">
+                        <div>Екран: <span>Smart Touch</span></div>
+                        <div>Ергономия: <span>Лек накрайник</span></div>
+                        <div>Режим: <span>Пулсов</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Phoenix+ -->
+            <div class="card">
+                <div class="card-img-box"><img src="foto-phoenix.jpg" alt="Phoenix+"></div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-type">Радиочестота</div>
+                        <h3><a href="phoenix-plus.html" style="color: white;">Phoenix+</a></h3>
+                        <p>Мултиполярна радиочестота за неоперативен лифтинг. Стимулира производството на колаген и регенерира тъканите за стягане на кожата.</p>
+                    </div>
+                    <div class="card-specs">
+                        <div>Енергия: <span>Радиочестотна (RF)</span></div>
+                        <div>Цел: <span>Стягане и Бръчки</span></div>
+                        <div>Зони: <span>Лице и Тяло</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. BellAction Duo -->
+            <div class="card">
+                <div class="card-img-box"><img src="foto-bellaction.jpg" alt="BellAction Duo"></div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-type">Ределиниране</div>
+                        <h3><a href="bellaction.html" style="color: white;">BellAction Duo</a></h3>
+                        <p>Физиоактивен дълбок масаж за мускулните слоеве. Мощни антицелулитни резултати, стягане без отпускане и лимфен дренаж.</p>
+                    </div>
+                    <div class="card-specs">
+                        <div>Действие: <span>Компресия</span></div>
+                        <div>Резултат: <span>-2 размера</span></div>
+                        <div>Употреба: <span>Лице и Тяло</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Dorsal+ -->
+            <div class="card">
+                <div class="card-img-box"><img src="foto-dorsal.jpg" alt="Dorsal+"></div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-type">Пресотерапия</div>
+                        <h3><a href="dorsal.html" style="color: white;">Dorsal+</a></h3>
+                        <p>Апарат за интелигентна пресотерапия. Стимулира кръвообращението и елиминира задържаните течности в крайниците.</p>
+                    </div>
+                    <div class="card-specs">
+                        <div>Функция: <span>Пневматичен дренаж</span></div>
+                        <div>Програми: <span>Детокс / Спорт</span></div>
+                        <div>Покритие: <span>Цялостно</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Ephyra -->
+            <div class="card">
+                <div class="card-img-box"><img src="foto-ephyra.jpg" alt="Ephyra"></div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-type">Грижа за лице</div>
+                        <h3><a href="ephyra.html" style="color: white;">Ephyra</a></h3>
+                        <p>Мултифункционална платформа за почистване. Комбинира водно дермабразио и галванични микротокове за хидратация.</p>
+                    </div>
+                    <div class="card-specs">
+                        <div>Компоненти: <span>Хидроабразио</span></div>
+                        <div>Терапия: <span>Активен Хидрогениран</span></div>
+                        <div>Тип кожа: <span>Всички видове</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- СЕКЦИЯ КОНТАКТИ -->
+    <div style="background-color: #ffffff; color: #334155; padding: 60px 20px;" id="contact">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px;">
             
-            <div class="detail-card">
-                <i class="fa-solid fa-dumbbell"></i>
-                <h3>Дълбока Мускулна Работа</h3>
-                <p>За разлика от вакуумните системи, които разтягат кожата, BellAction оказва натиск навътре върху мускула. Това възстановява мускулния тонус и придава стегнат атлетичен вид.</p>
+            <div style="text-align: left;">
+                <h3 style="font-size: 22px; color: #0f172a; margin: 0 0 25px 0; text-transform: uppercase; font-weight: 600;">Онлайн Заявка</h3>
+                <form onsubmit="event.preventDefault(); alert('Благодарим ви! Заявката е изпратена успешно.');">
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 6px;">Три имена *</label>
+                        <input type="text" required style="width: 100%; padding: 12px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; color: #0f172a; box-sizing: border-box; font-size: 14px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 6px;">Телефон за контакти *</label>
+                        <input type="text" required style="width: 100%; padding: 12px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; color: #0f172a; box-sizing: border-box; font-size: 14px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 6px;">E-mail *</label>
+                        <input type="email" required style="width: 100%; padding: 12px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; color: #0f172a; box-sizing: border-box; font-size: 14px;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 6px;">Съобщение</label>
+                        <textarea rows="4" style="width: 100%; padding: 12px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; color: #0f172a; box-sizing: border-box; font-size: 14px; resize: vertical;"></textarea>
+                    </div>
+                    <button type="submit" style="background: linear-gradient(to right, #06b6d4, #3b82f6); color: white; font-weight: 700; padding: 14px 35px; border: none; border-radius: 4px; text-transform: uppercase; font-size: 13px; cursor: pointer;">Изпрати Заявка</button>
+                </form>
             </div>
 
-            <div class="detail-card">
-                <i class="fa-solid fa-droplet"></i>
-                <h3>Мощен Лимфен Дренаж</h3>
-                <p>Регулируемата компресия стимулира кръвообращението в дълбочина, ускорява клетъчния метаболизъм и бързо елиминира токсините и излишната вода от крайниците.</p>
-            </div>
+            <div style="text-align: left;">
+                <h3 style="font-size: 22px; color: #0f172a; margin: 0 0 25px 0; text-transform: uppercase; font-weight: 600;">Адрес и Контакти</h3>
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; color: #475569; font-size: 15px;">
+                    <i class="fa-solid fa-map-marker-alt" style="color: #3b82f6; font-size: 18px;"></i>
+                    <span>София, кв. Бъкстон, ул. Майор Горталов 5</span>
+                </div>
 
-            <div class="detail-card">
-                <i class="fa-solid fa-scissors"></i>
-                <h3>Премахване на Стрии и Белези</h3>
-                <p>Специалният накрайник за лице и деликатни зони извършва микродермабразио, което ексфолира кожата, заглажда релефа и видимо заличава стрии и повърхностни бръчки.</p>
+                <div style="margin-bottom: 12px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 12px 16px; display: flex; align-items: center; gap: 15px;">
+                    <i class="fa-solid fa-envelope" style="color: #0f172a; font-size: 16px;"></i>
+                    <span style="color: #475569; font-size: 14px;">Email: <a href="mailto:office@opfalo.com" style="color: #3b82f6; font-weight: 600;">office@opfalo.com</a></span>
+                </div>
+
+                <div style="margin-bottom: 12px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 12px 16px; display: flex; align-items: center; gap: 15px;">
+                    <i class="fa-solid fa-phone" style="color: #0f172a; font-size: 16px;"></i>
+                    <span style="color: #475569; font-size: 14px;">Тел: <a href="tel:+359898939202" style="color: #3b82f6; font-weight: 600;">+359 898 939 202</a></span>
+                </div>
+
+                <!-- СОЦИАЛНИ МРЕЖИ БУТОНИ -->
+                <div style="margin-top: 25px; display: flex; gap: 12px;">
+                    <a href="https://facebook.com" target="_blank" style="background-color: #1877f2; color: white; padding: 10px 18px; border-radius: 6px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px;"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                    <a href="https://instagram.com" target="_blank" style="background-color: #e1306c; color: white; padding: 10px 18px; border-radius: 6px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px;"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                </div>
             </div>
 
         </div>
     </div>
 
     <!-- ФУТЪР -->
-    <footer>
-        <p>© 2026 Опфало България. Всички права запазени. Официален представител на Óphalo Испания.</p>
-    </footer>
+    <div style="background-color: #090d16; border-top: 2px solid #1e293b; padding: 40px 20px; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+            <div style="font-size: 18px; font-weight: 800; color: white; letter-spacing: 2px; text-transform: uppercase;">Ophalo Bulgaria</div>
+            <div style="font-size: 13px; color: #94a3b8;">office@opfalo.com | +359 898 939 202 | София, кв. Бъкстон, ул. Майор Горталов 5</div>
+            <div style="font-size: 12px; color: #64748b;">© 2026 Опфало България. Всички права запазени.</div>
+        </div>
+    </div>
 
 </body>
 </html>
