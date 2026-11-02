@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://sitemaps.org">
+  <url>
+    <loc>https://opfalo.com</loc>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://opfalo.comindex.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://opfalo.combellaction.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://opfalo.comdorsal.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://opfalo.comephyra.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://opfalo.comnexus-2000.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://opfalo.comopphalo-ls1200.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://opfalo.comphoenix-plus.html</loc>
+    <priority>0.80</priority>
+  </url>
+</urlset>
