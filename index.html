@@ -702,6 +702,28 @@ img {
             viber: "359898939202", // Viber number
             whatsapp: "+359898939202", // WhatsApp number
             line: "https://g.page/r/CQTxM7xyGHpVEBM/review", // Вашият работещ Google линк за отзиви
+            call_to_action: "Свържи се / Оцени ни", // Текст над бутона
+            button_color: "#A855F7", // Цвят на главния бутон
+            position: "right", // Позиция
+            order: "viber,whatsapp,line", // Подредба на бутоните
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + '//static.' + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
+
+</body>
+</html>
+
+<script type="text/javascript">
+    (function () {
+        var options = {
+            viber: "359898939202", // Viber number
+            whatsapp: "+359898939202", // WhatsApp number
+            line: "https://g.page/r/CQTxM7xyGHpVEBM/review", // Вашият работещ Google линк за отзиви
 
             call_to_action: "Свържи се / Оцени ни", // Текст над бутона
             button_color: "#A855F7", // Цвят на главния бутон
