@@ -696,7 +696,28 @@ img {
     }
 </script>
 
-<!-- БУТОНИ ЗА БЪРЗА ВРЪЗКА ПО VIBER И WHATSAPP -->
+<!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            viber: "359898939202", // Viber number
+            whatsapp: "+359898939202", // WhatsApp number
+            call_to_action: "Пишете ни", // Текст над бутона
+            button_color: "#A855F7", // Цвят на главния бутон
+            position: "right", // Позиция (вдясно или вляво)
+            order: "viber,whatsapp", // Подредба
+        };
+        var proto = 'https:', host = "getbutton.io", url = proto + '//static.' + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
+
+</body>
+</html>
+
     <div style="position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 999;">
         <!-- Viber Бутон -->
         <a href="viber://chat?number=%2B359898939202" style="background-color: #732dd3; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3);" target="_blank"><i class="fab fa-viber"></i></a>
