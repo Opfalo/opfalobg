@@ -4,8 +4,8 @@
     <loc>https://www.opfalo.com</loc>
     <priority>1.00</priority>
   </url>
-  <url>
-    <loc>https://www.opfalo.comindex.html</loc>
+   <url>
+    <loc>https://opfalo.com</loc>
     <priority>0.80</priority>
   </url>
   <url>
