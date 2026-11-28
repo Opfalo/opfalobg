@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neriah - Диатермоконтракция, Радиочестота и Мускулна Активация | Опфало България</title>
-    <meta name="description" content="Иновативен апарат Neriah от Ópphalo, съчетаващ биполярна радиочестота и мускулна активация (диатермоконтракция) за стягане на кожата, тонизиране и ремоделиране на лице и тяло.">
+    <title>Neriah - Диатермоконтракция, Биполярна Радиочестота и Мускулна Активация | Опфало България</title>
+    <meta name="description" content="Модерна технология Neriah от Ópphalo, съчетаваща диатермия, биполярна радиочестота и мускулна стимулация за стягане на кожата, тонизиране и контуриране на лице и тяло. Официален представител за България.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://opfalo.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         body { background-color: #020617; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; scroll-behavior: smooth; }
         a { text-decoration: none; transition: all 0.2s; }
@@ -26,37 +26,55 @@
 
         /* ОСНОВЕН БЛОК ПРОДУКТ */
         .product-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
-        .product-img-box { background-color: #ffffff; border-radius: 16px; padding: 30px; display: flex; align-items: center; justify-content: center; border: 1px solid #1e293b; min-height: 400px; }
-        .product-img-box img { max-width: 100%; max-height: 400px; object-fit: contain; }
+        .product-img-box { background-color: #ffffff; border-radius: 16px; padding: 30px; display: flex; align-items: center; justify-content: center; border: 1px solid #1e293b; min-height: 420px; }
+        .product-img-box img { max-width: 100%; max-height: 420px; object-fit: contain; }
         
-        .product-info h1 { font-size: 36px; font-weight: 800; color: white; margin: 0 0 10px 0; }
-        .product-badge { display: inline-block; padding: 4px 12px; background-color: rgba(6, 182, 212, 0.1); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 9999px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; }
-        .product-info p { color: #94a3b8; font-size: 15px; line-height: 1.7; margin-bottom: 25px; text-align: justify; }
+        .product-info h1 { font-size: 36px; font-weight: 800; color: white; margin: 0 0 12px 0; line-height: 1.2; }
+        .product-badge { display: inline-block; padding: 4px 12px; background-color: rgba(6, 182, 212, 0.1); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 9999px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 18px; }
+        .product-info p { color: #94a3b8; font-size: 15px; line-height: 1.7; margin-bottom: 18px; text-align: justify; }
 
         /* СПЕЦИФИКАЦИИ */
-        .specs-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; overflow: hidden; }
+        .specs-table { width: 100%; border-collapse: collapse; margin: 25px 0 30px 0; background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; overflow: hidden; }
         .specs-table tr { border-bottom: 1px solid #1e293b; }
         .specs-table tr:last-child { border-bottom: none; }
         .specs-table td { padding: 14px 20px; font-size: 14px; color: #cbd5e1; }
-        .specs-table td:first-child { font-weight: 700; color: #94a3b8; width: 40%; }
+        .specs-table td:first-child { font-weight: 700; color: #94a3b8; width: 42%; }
         .specs-table td span { color: #22d3ee; font-weight: 600; }
 
         .action-btn { display: inline-block; width: 100%; text-align: center; background: linear-gradient(to right, #06b6d4, #3b82f6); color: white; font-weight: 700; padding: 16px; border: none; border-radius: 6px; text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px; box-sizing: border-box; }
         .action-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4); }
 
-        /* ДЕТАЙЛНО ОПИСАНИЕ */
-        .details-section { max-width: 1200px; margin: 60px auto; padding: 0 20px; border-top: 1px solid #1e293b; padding-top: 40px; }
-        .details-section h2 { font-size: 24px; color: white; text-transform: uppercase; margin-bottom: 25px; }
-        .details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        /* СЕКЦИИ С ИНФОРМАЦИЯ */
+        .details-section { max-width: 1200px; margin: 60px auto; padding: 40px 20px 0 20px; border-top: 1px solid #1e293b; }
+        .details-section h2 { font-size: 24px; color: white; text-transform: uppercase; margin: 0 0 12px 0; }
+        .section-subtitle { color: #94a3b8; font-size: 15px; line-height: 1.6; margin: 0 0 30px 0; max-width: 850px; }
+        
+        .details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
         .detail-card { background-color: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; text-align: left; }
         .detail-card i { font-size: 28px; color: #22d3ee; margin-bottom: 15px; }
+        .detail-card .method-tag { display: inline-block; font-size: 11px; font-weight: 700; color: #22d3ee; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
         .detail-card h3 { color: white; font-size: 18px; margin: 0 0 10px 0; }
-        .detail-card p { color: #94a3b8; font-size: 13.5px; line-height: 1.5; margin: 0; }
+        .detail-card p { color: #94a3b8; font-size: 14px; line-height: 1.6; margin: 0; }
+
+        /* ДВЕ ДЕЙСТВИЯ БАНЕР */
+        .dual-action-box { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid #334155; border-radius: 16px; padding: 35px; margin-top: 50px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: center; }
+        .dual-action-box h2 { font-size: 26px; color: white; margin: 0 0 12px 0; }
+        .dual-action-box h2 span { color: #22d3ee; }
+        .dual-action-box p { color: #cbd5e1; font-size: 15px; line-height: 1.7; margin: 0 0 12px 0; }
+
+        /* ФИНАНСИРАНЕ БАНЕР */
+        .finance-banner { max-width: 1200px; margin: 60px auto 0 auto; padding: 0 20px; }
+        .finance-inner { background: linear-gradient(90deg, #0284c7 0%, #06b6d4 100%); border-radius: 16px; padding: 35px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+        .finance-text h3 { color: white; font-size: 24px; margin: 0 0 8px 0; }
+        .finance-text p { color: #e0f2fe; font-size: 15px; margin: 0; }
+        .finance-btn { background-color: #020617; color: white; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 14px; text-transform: uppercase; white-space: nowrap; }
+        .finance-btn:hover { background-color: #0f172a; transform: translateY(-2px); }
 
         footer { background-color: #020617; border-top: 1px solid #1e293b; text-align: center; padding: 25px 20px; color: #64748b; font-size: 12px; margin-top: 60px; }
         @media (max-width: 768px) {
-            .top-bar { display: none; }
-            body { padding: 10px; }
+            body { padding: 0; }
+            .product-info h1 { font-size: 28px; }
+            .finance-inner { padding: 25px; }
         }
     </style>
 </head>
@@ -82,10 +100,12 @@
         
         <!-- Кратко инфо и Технически данни -->
         <div class="product-info">
-            <div class="product-badge">Диатермоконтракция & Двойна Технология</div>
-            <h1>Neriah - Биполярна Радиочестота и Мускулна Активация</h1>
+            <div class="product-badge">Диатермия • Биполярна RF • Мускулна Стимулация</div>
+            <h1>Neriah — Нашата Диатермоконтракция</h1>
 
-            <p>Neriah е иновативна професионална система от Ópphalo, базирана на технологията диатермоконтракция – синхронизирано действие на биполярна радиочестота и мускулна активация в едно устройство. Докато термичният компонент стяга кожата и стимулира колагена, мускулната стимулация подобрява тонуса и контурира тялото и лицето с прецизни, персонализирани протоколи.</p>
+            <p><strong>Neriah</strong> извежда естетичните технологии крачка напред с <strong>диатермоконтракция</strong> — синхронизирано действие на биполярна радиочестота и контролирана мускулна активация в едно устройство, което позволява постигането на различни естетични цели върху една единствена платформа.</p>
+            
+            <p>Технологията съчетава две допълващи се действия: <strong>термичният компонент на биполярната радиочестота</strong> подобрява плътността и стягането на кожата, докато <strong>мускулната активация</strong> повишава мускулния тонус и оформя контурите на тялото и лицето. Благодарение на възможността за <strong>независимо регулиране на двете сонди</strong> и избора между фиксирани апликатори, мануална работа или комбинация от двете, специалистът може да създава изцяло персонализирани протоколи.</p>
             
             <table class="specs-table">
                 <tr>
@@ -97,53 +117,25 @@
                     <td><span>Биполярна радиочестота + Мускулна активация</span></td>
                 </tr>
                 <tr>
+                    <td>Методи на работа:</td>
+                    <td><span>Sculpt, Activate и Synergy</span></td>
+                </tr>
+                <tr>
+                    <td>Контрол на сондите:</td>
+                    <td>Независимо регулиране на двата канала</td>
+                </tr>
+                <tr>
                     <td>Зони на приложение:</td>
-                    <td>Лицеви и телесни естетични протоколи</td>
-                </tr>
-                <tr>
-                    <td>Контрол на накрайниците:</td>
-                    <td>Независимо регулиране на двете сонди</td>
-                </tr>
-                <tr>
-                    <td>Основни цели:</td>
-                    <td>Стягане на кожата, мускулен тонус и контуриране</td>
+                    <td>Специализирани програми за Лице и Тяло</td>
                 </tr>
             </table>
             
-            <a href="index.html#contact" class="action-btn">Направи запитване за наем / покупка</a>
+            <a href="index.html#contact" class="action-btn">Направи запитване за наем / лизинг / покупка</a>
         </div>
     </div>
 
-    <!-- ДЕТАЙЛНО ОПИСАНИЕ С ПРЕДИМСТВА -->
-    <div class="details-section">
-        <h2>Резултати и Медико-Естетични Предимства</h2>
-        <div class="details-grid">
-            
-            <div class="detail-card">
-                <i class="fa-solid fa-fire-flame-curved"></i>
-                <h3>Стягане и Качество на Кожата</h3>
-                <p>Термичният компонент на биполярната радиочестота загрява тъканите в дълбочина, стимулира синтеза на нов колаген и видимо подобрява плътността и еластичността на кожата.</p>
-            </div>
-
-            <div class="detail-card">
-                <i class="fa-solid fa-bolt"></i>
-                <h3>Мускулен Тонус и Контуриране</h3>
-                <p>Прецизната мускулна активация укрепва мускулните влакна в дълбочина, което води до естествено повдигане, стягане и ясно дефиниране на контурите на тялото и лицето.</p>
-            </div>
-
-            <div class="detail-card">
-                <i class="fa-solid fa-sliders"></i>
-                <h3>Индивидуални Протоколи</h3>
-                <p>Възможността за независимо настройване на двете сонди позволява на специалиста да адаптира терапията спрямо спецификите на всяка зона и нуждите на конкретния клиент.</p>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- ФУТЪР -->
-    <footer>
-        © 2026 Опфало България. Всички права запазени. Официален представител на Ópphalo Испания.
-    </footer>
-
-</body>
-</html>
+    <!-- ДВЕ ДЕЙСТВИЯ. ПОВЕЧЕ ВЪЗМОЖНОСТИ. -->
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div class="dual-action-box">
+            <div>
+                <h2>Две действия. <span>Повече възможности.</span></h2>
