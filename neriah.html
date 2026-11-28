@@ -44,6 +44,15 @@
         .action-btn { display: inline-block; width: 100%; text-align: center; background: linear-gradient(to right, #06b6d4, #3b82f6); color: white; font-weight: 700; padding: 16px; border: none; border-radius: 6px; text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px; box-sizing: border-box; }
         .action-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4); }
 
+        /* ДВЕ ДЕЙСТВИЯ БАНЕР СЪС СНИМКА */
+        .dual-action-wrapper { max-width: 1200px; margin: 50px auto 0 auto; padding: 0 20px; }
+        .dual-action-box { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid #334155; border-radius: 16px; padding: 35px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; align-items: center; }
+        .dual-action-img { background: #ffffff; border-radius: 12px; padding: 15px; text-align: center; }
+        .dual-action-img img { max-width: 100%; border-radius: 8px; display: block; margin: 0 auto; }
+        .dual-action-box h2 { font-size: 28px; color: white; margin: 0 0 15px 0; line-height: 1.3; }
+        .dual-action-box h2 span { color: #22d3ee; }
+        .dual-action-box p { color: #cbd5e1; font-size: 15px; line-height: 1.7; margin: 0 0 14px 0; }
+
         /* СЕКЦИИ С ИНФОРМАЦИЯ */
         .details-section { max-width: 1200px; margin: 60px auto; padding: 40px 20px 0 20px; border-top: 1px solid #1e293b; }
         .details-section h2 { font-size: 24px; color: white; text-transform: uppercase; margin: 0 0 12px 0; }
@@ -51,16 +60,15 @@
         
         .details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
         .detail-card { background-color: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; text-align: left; }
+        .detail-card img.method-photo { width: 100%; height: 210px; object-fit: cover; border-radius: 8px; margin-bottom: 18px; border: 1px solid #334155; }
         .detail-card i { font-size: 28px; color: #22d3ee; margin-bottom: 15px; }
         .detail-card .method-tag { display: inline-block; font-size: 11px; font-weight: 700; color: #22d3ee; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
         .detail-card h3 { color: white; font-size: 18px; margin: 0 0 10px 0; }
         .detail-card p { color: #94a3b8; font-size: 14px; line-height: 1.6; margin: 0; }
 
-        /* ДВЕ ДЕЙСТВИЯ БАНЕР */
-        .dual-action-box { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid #334155; border-radius: 16px; padding: 35px; margin-top: 50px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: center; }
-        .dual-action-box h2 { font-size: 26px; color: white; margin: 0 0 12px 0; }
-        .dual-action-box h2 span { color: #22d3ee; }
-        .dual-action-box p { color: #cbd5e1; font-size: 15px; line-height: 1.7; margin: 0 0 12px 0; }
+        /* ГАЛЕРИЯ СНИМКИ */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 25px; }
+        .gallery-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; border: 1px solid #334155; }
 
         /* ФИНАНСИРАНЕ БАНЕР */
         .finance-banner { max-width: 1200px; margin: 60px auto 0 auto; padding: 0 20px; }
@@ -72,7 +80,6 @@
 
         footer { background-color: #020617; border-top: 1px solid #1e293b; text-align: center; padding: 25px 20px; color: #64748b; font-size: 12px; margin-top: 60px; }
         @media (max-width: 768px) {
-            body { padding: 0; }
             .product-info h1 { font-size: 28px; }
             .finance-inner { padding: 25px; }
         }
@@ -93,12 +100,10 @@
 
     <!-- ОСНОВЕН БЛОК ПРОДУКТ -->
     <div class="product-container">
-        <!-- Снимка -->
         <div class="product-img-box">
             <img src="foto-neriah.png" alt="Професионален апарат за диатермоконтракция, биполярна радиочестота и мускулна активация Ópphalo Neriah">
         </div>
         
-        <!-- Кратко инфо и Технически данни -->
         <div class="product-info">
             <div class="product-badge">Диатермия • Биполярна RF • Мускулна Стимулация</div>
             <h1>Neriah — Нашата Диатермоконтракция</h1>
@@ -121,21 +126,3 @@
                     <td><span>Sculpt, Activate и Synergy</span></td>
                 </tr>
                 <tr>
-                    <td>Контрол на сондите:</td>
-                    <td>Независимо регулиране на двата канала</td>
-                </tr>
-                <tr>
-                    <td>Зони на приложение:</td>
-                    <td>Специализирани програми за Лице и Тяло</td>
-                </tr>
-            </table>
-            
-            <a href="index.html#contact" class="action-btn">Направи запитване за наем / лизинг / покупка</a>
-        </div>
-    </div>
-
-    <!-- ДВЕ ДЕЙСТВИЯ. ПОВЕЧЕ ВЪЗМОЖНОСТИ. -->
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-        <div class="dual-action-box">
-            <div>
-                <h2>Две действия. <span>Повече възможности.</span></h2>
